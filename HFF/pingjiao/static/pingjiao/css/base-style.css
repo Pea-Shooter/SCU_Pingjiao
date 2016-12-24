@@ -1,11 +1,38 @@
 /*This css file mainly describe the style of base element*/
+* {
+    font-family: PingFangSC-Regular, sans-serif;
+}
 
-/*---form start---*/
+
+/*---form: start---*/
 .form-batch {
-    border: 1px solid black;
-    display: table;
+    display: block;
 }
 .form-batch .form-ele {
     display: block;
 }
-/*---form end---*/
+.form-head {
+    background: #494949;
+    height: 20%;
+    margin-bottom: 20px;
+}
+.form-head h4 {
+    position: relative;
+    font-style: italic;
+    color: #ffffff;
+    text-align: center;
+    font-size: 3em;
+    /*line-height: 100%;*/
+}
+/*---form: end---*/
+
+
+/*---top: cannot change the structure, what you do just change the color and so on---*/
+.jum-top {
+    background-color: #494949;
+    color: #ffffff;
+}
+.jum-info {
+    font-family: PingFangSC-Ultralight, sans-serif;
+}
+/*---top: end---*/
