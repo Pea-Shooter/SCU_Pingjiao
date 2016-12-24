@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--core files: bootstrap css files-->
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'pingjiao/css/base-style.css' %}">
+        <!--add before bootstrap.min.js-->
+        <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        {% block load_head_files %}{% endblock load_head_files %}
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <header><h1>Welcome to SCU-PJ System</h1></header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 ">
+                    <form method="post" class="form-batch">
+                        {% csrf_token %}
+                        {{ pj_form.stu_id }}
+                        {{ pj_form.passwd }}
+                        <input type="submit">
+                    </form>
+                </div>  
+            </div>
+        </div>
+        {% block content %}{% endblock content %}
+        {% block end_files %}{% endblock end_files %}
+    </body>
+</html>
