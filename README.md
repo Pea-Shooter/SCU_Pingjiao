@@ -1,5 +1,6 @@
 # WAF
-> All of this project is based on Django1.9.5 and above, and the completion of HFF is Web App for Fun
+> All of this project is based on **Django1.9.5+** and **Python3.5.1+**, and the completion of HFF is Web App for Fun
+> So, if you like it, welcome to star it, HAHA~
 
 ## Apps
 > List all apps at here
