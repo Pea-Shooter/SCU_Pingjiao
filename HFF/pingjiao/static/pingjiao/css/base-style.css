@@ -1,0 +1,11 @@
+/*This css file mainly describe the style of base element*/
+
+/*---form start---*/
+.form-batch {
+    border: 1px solid black;
+    display: table;
+}
+.form-batch .form-ele {
+    display: block;
+}
+/*---form end---*/
