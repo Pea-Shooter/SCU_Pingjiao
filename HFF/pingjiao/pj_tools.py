@@ -104,14 +104,14 @@ def do_action(account, passwd):
             print('--> 身份验证成功！')
             pj_header = {'cookie': r['set-cookie'].split(';')[0]}
             # 获取课程列表的连接
-            url_pj = 'http://202.115.47.141/jxpgXsAction.do?oper=listWj&totalrows=24&pageSize=200'
-            r, c = h.request(url_pj, headers=pj_header)
-            html = c.decode('gbk')
-            # do action
-            if r['status'] == '200':
-                print('--> 成功获取所有课程信息!')
-                do_pj(html, h, url_pj, pj_header['cookie'])
-                print('===Done!===')
+            # url_pj = 'http://202.115.47.141/jxpgXsAction.do?oper=listWj&totalrows=24&pageSize=200'
+            # r, c = h.request(url_pj, headers=pj_header)
+            # html = c.decode('gbk')
+            # # do action
+            # if r['status'] == '200':
+            #     print('--> 成功获取所有课程信息!')
+            #     do_pj(html, h, url_pj, pj_header['cookie'])
+            #     print('===Done!===')
         else:
             print('获取主页失败，确认你的用户名和密码！')
     except Exception as e:
