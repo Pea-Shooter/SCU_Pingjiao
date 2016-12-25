@@ -39,6 +39,8 @@ class PostUserData(forms.Form):
 
     def check_format(self, stu_id):
         try:
+            if len(stu_id) < 11:
+                return False
             test = int(stu_id)
             return True
         except Exception:
