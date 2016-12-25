@@ -1,4 +1,4 @@
-"""HFF URL Configuration
+"""universe_app URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.9/topics/http/urls/
@@ -14,10 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
-from django.contrib import admin
+from . import views
+
+app_name = 'universe_app'
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'pingjiao/', include('pingjiao.urls')),
-    url(r'^introduce/', include('universe_app.urls'))
+    url(r'$', views.IndexView.as_view(), name='intro')
 ]
