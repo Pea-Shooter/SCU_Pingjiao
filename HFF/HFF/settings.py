@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'universe_app',  # this app universe all branch apps
     'pingjiao',  # this app is built for make comments for our teachers
     'django.contrib.admin',
     'django.contrib.auth',
