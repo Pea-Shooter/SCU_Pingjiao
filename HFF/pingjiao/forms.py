@@ -35,6 +35,8 @@ class PostUserData(forms.Form):
             temp = self.fields['stu_id']
             raise forms.ValidationError(self.fields['stu_id'].error_messages['id_check'], code='stu_id')
 
+        return cleaned_data
+
     def check_format(self, stu_id):
         try:
             test = int(stu_id)
