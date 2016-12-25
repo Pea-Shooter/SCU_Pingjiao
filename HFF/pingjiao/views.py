@@ -41,4 +41,6 @@ class PJView(View):
             return HttpResponse('Success!')
         else:
             self.context[self.pj_form_name] = form
+            if form.errors.get('__all__'):
+                self.context['universe_errors'] = form.errors['__all__']
             return render(request, self.template_name, self.context)
