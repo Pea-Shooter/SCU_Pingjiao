@@ -1,0 +1,10 @@
+* {
+    font-family: PingFangSC-Regular, sans-serif;
+}
+
+/*---Setting head-bar---*/
+.head-bar {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0px;
+    text-align: center;
+}
