@@ -25,7 +25,7 @@ SECRET_KEY = '$y3@vyp^u@h16x#$fzcw2g)(mdxlm&kq&&ld3369g&h*kt%hal'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kornberg.site']
 
 
 # Application definition
@@ -108,6 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'zh-cn'
+# LANGUAGE_CODE = 'zh-Hans'  ## version-1.10
 
 # TIME_ZONE = 'UTC'
 TIME_ZONE = 'Asia/Chongqing'
