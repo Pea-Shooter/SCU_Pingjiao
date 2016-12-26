@@ -124,7 +124,7 @@ class PJAction:
                 self.headers['Cookie'] = pj_header['cookie']
                 # 获取课程列表的连接
                 # r, c = h.request(self.main_href, headers=pj_header)
-                # html = c.decode('gbk')
+                # html = c.decode(self.encoding)
                 # # do action
                 # if r['status'] == '200':
                 #     print('--> 成功获取所有课程信息!')
