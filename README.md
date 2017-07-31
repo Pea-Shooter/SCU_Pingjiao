@@ -3,7 +3,7 @@
 > So, if you like it, welcome to star it
 
 ## Download Realease
-> how to run：[Method 2nd](#method 2nd)
+> how to run：[Method 2nd](#run)
 
 [ScuPingjiao](https://pan.baidu.com/s/1pKD6nRP)
 
@@ -32,7 +32,7 @@ example:
 python3 action.py 2014141462345 123456
 ```
 
-### Method 2nd
+<h3 id="run">Method 2nd</h3>
 
 > If your computer has not a `Python3` environment, you can run `ScuPingjiao` (locates at `SCU_Pingjiao/ScuPingjiao` ) in your command line like this:
 
