@@ -32,7 +32,7 @@ example:
 python3 action.py 2014141462345 123456
 ````
 
-*<span id="run">Method 2nd</span>*:
+<span id="run">*Method 2nd*</span>:
 
 > If your computer has not a `Python3` environment, you can run `ScuPingjiao` (locates at `SCU_Pingjiao/ScuPingjiao` ) in your command line like this:
 
