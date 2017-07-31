@@ -2,17 +2,49 @@
 > All of this project is based on **Django1.9.5+** and **Python3.5.1+**, and the completion of HFF is Web App for Fun
 > So, if you like it, welcome to star it
 
+## Download Realease
+> how to run：[Method 2](#run)
+
+link
+
 ## Apps
 > List all apps at here
 
 1. **pingjiao**: *this app is used to make comments for our teachers convenient*
 
 **Note**
-Website has been closed for no money!!! if you wanna know how to implement it, you can read `SCU_Pingjiao/HFF/pingjiao/pj_tools.py`, and you can execute `SCU_Pingjiao/HFF/pingjiao/action.py` in command line.
+
+Website has been closed for no money!!! if you wanna know how to implement it, you can read `SCU_Pingjiao/HFF/pingjiao/pj_tools`.
 
 **How to execute?**
+
+*Method 1st*:
+
+> If your computer has a `Python3` environment, and `httplib2`, `bs4` all has been installed in your environment, you can use this method
+
+launch `SCU_Pingjiao/HFF/pingjiao/action.py` in command line.
+
 help: `python3 action.py [username] [password]`
-example: `python3 action.py 2014141462385 123456`
+
+example: 
+
+```shell
+python3 action.py 2014141462345 123456
+````
+
+*<span id="run">Method 2nd</span>*:
+
+> If your computer has not a `Python3` environment, you can run `ScuPingjiao` (locates at `SCU_Pingjiao/ScuPingjiao` ) in your command line like this:
+
+```shell
+./ScuPingjiao [username] [password]
+```
+
+example:
+
+```shell
+./ScuPingjiao 2014141462345 123456
+```
 
 **What will you see like**
 
