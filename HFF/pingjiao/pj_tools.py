@@ -51,7 +51,8 @@ class PJAction:
         """
         cleaned_info = []  # store the cleaned information of each lesson, by getting the return value of extract function
         soup = BeautifulSoup(html_content, 'html.parser')
-        table_info = soup.find_all('table')[-2].find_all('img')  # table info
+        table_info = soup.find_all('table')[-2]
+        table_info = table_info.find_all('img')  # table info
         input_hidden = soup.find_all('input')[-1]
         cleaned_info = self.extract(table_info)  # 格式：wjbm | bpr | bprm | wjmc | pgnrm | pgnr | oper='wjShow'
 
@@ -85,7 +86,7 @@ class PJAction:
             'pgnr': '',
             self.hidden_name: ''
         }
-
+        # print(cleaned_info)
         # main part
         for data in cleaned_info:
             r2, c2 = h.request(self.pj_judge_href, method='POST', headers=self.headers, body=urlencode(data))
@@ -93,19 +94,19 @@ class PJAction:
                 result = c2.decode(self.encoding, 'ignore')
                 soup_content = BeautifulSoup(result, 'html.parser')
                 # 拿到评教页面的hidden value
-                hidden_value_2 = soup_content.find('input', attrs={'name': hidden_name, 'type': 'hidden'}).attrs['value']
+                hidden_value_2 = soup_content.find('input', attrs={'name': 'wjbm', 'type': 'hidden'}).attrs['value']
 
                 if data['wjmc'] == '学生评教':
                     data_for_teacher['wjbm'] = data['wjbm']
                     data_for_teacher['bpr'] = data['bpr']
                     data_for_teacher['pgnr'] = data['pgnr']
-                    data_for_teacher[hidden_name] = hidden_value_2
+                    data_for_teacher[self.hidden_name] = hidden_value_2
                     r3, c3 = h.request(self.form_action_href, method='POST', headers=self.headers, body=urlencode(data_for_teacher, encoding=self.encoding))
                 else:
                     data_for_ta['wjbm'] = data['wjbm']
                     data_for_ta['bpr'] = data['bpr']
                     data_for_ta['pgnr'] = data['pgnr']
-                    data_for_ta[hidden_name] = hidden_value_2
+                    data_for_ta[self.hidden_name] = hidden_value_2
                     r3, c3 = h.request(self.form_action_href, method='POST', headers=self.headers, body=urlencode(data_for_ta, encoding=self.encoding))
                 print('{0}, {1}, {2} 评教完成！'.format(data['bprm'], data['wjmc'], data['pgnrm']))
             else:
@@ -123,13 +124,13 @@ class PJAction:
                 pj_header = {'cookie': r['set-cookie'].split(';')[0]}
                 self.headers['Cookie'] = pj_header['cookie']
                 # 获取课程列表的连接
-                # r, c = h.request(self.main_href, headers=pj_header)
-                # html = c.decode(self.encoding)
-                # # do action
-                # if r['status'] == '200':
-                #     print('--> 成功获取所有课程信息!')
-                #     do_pj(html, h)
-                #     print('===Done!===')
+                r, c = h.request(self.main_href, headers=pj_header)
+                html = c.decode(self.encoding)
+                # do action
+                if r['status'] == '200':
+                    print('--> 成功获取所有课程信息!')
+                    self.do_pj(html, h)
+                    print('===Done!===')
             else:
                 print('获取主页失败，确认你的用户名和密码！')
         except Exception as e:

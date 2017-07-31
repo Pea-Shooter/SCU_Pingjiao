@@ -1,0 +1,207 @@
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/dwr/interface/ajaxtool.js"></script>
+<script type="text/javascript" src="/dwr/engine.js"></script>
+<script type="text/javascript" src="/dwr/util.js" ></script>
+<html>
+<head>
+<title>
+学生评估问卷列表
+</title>
+<link href="/css/newcss/project.css" rel="stylesheet" type="text/css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onload="unload()" style="overflow:auto;">
+<form name="WjList" method="POST" action="jxpgXsAction.do">
+
+
+
+		
+		<table width="100%" border="0" align="center" cellpadding="0"
+			cellspacing="0">
+			<tr>
+				<td class="Linetop"></td>
+			</tr>
+		</table>
+		<table width="100%" border="0" cellpadding="0" cellspacing="0"
+			class="title" id="tblHead">
+			<tr>
+				<td width="80%">
+					<table border="0" align="left" cellpadding="0" cellspacing="0">
+
+						<tr>
+							<td>
+								&nbsp;
+							</td>
+							<td valign="middle">
+								&nbsp;
+								<b>列表</b> &nbsp;
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td width="20%">
+
+					<table border="0" align="left" cellpadding="0" cellspacing="0"
+						width="100%">
+
+						<tr>
+							<td>
+								&nbsp;
+							</td>
+
+							<td width="3">
+								&nbsp;
+							</td>
+							<td width="10" align="center">
+								&nbsp;
+							</td>
+							<td width="3">
+								&nbsp;
+							</td>
+
+
+							<td width="5"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table width="100%" border="0" align="center" cellpadding="0"
+			cellspacing="0">
+			<tr>
+				<td class="Linetop"></td>
+			</tr>
+		</table>
+		<table width="100%" border="0" cellpadding="0" cellspacing="0"
+			class="titleTop2">
+				<input name="wjbm" type="hidden" value="">
+				<input name="bpr" type="hidden" value="">
+				<input name="pgnr" type="hidden" value="">
+				<input name="oper" type="hidden" value="">
+				<input name="wjmc" type="hidden" value="">
+				<input name="bprm" type="hidden" value="">
+				<input name="pgnrm" type="hidden" value="">
+			<tr>
+				<td class="pageAlign">
+					<table cellpadding="0" width="100%" class="displayTag"
+						cellspacing="1" border="0" id="user">
+						<thead>
+							<tr>
+
+								<th width="10%" class="sortable" align="center">
+									问卷名称
+								</th>
+								<th width="10%" class="sortable" align="center">
+									被评人
+								</th>
+								<th width="50%" class="sortable" align="center">
+									评估内容
+								</th>
+								<th width="10%" class="sortable" align="center">
+									是否已评估
+								</th>
+								<th width="10%" class="sortable" align="center">
+									操作
+								</th>
+							</tr>
+						</thead>
+						
+						
+					</table>
+					
+				</td>
+			</tr>
+
+		</table>
+		<div align="right">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0" ><tr><td align="right">共0项&nbsp;&nbsp;第1/0页&nbsp;&nbsp;<img title="第一页" src="/img/icon/noDownDM2.gif"style="vertical-align:center;" width="11" height="11" />&nbsp;<img title="前一页" src="/img/icon/noDownDM_2.gif"style="vertical-align:center;" width="11" height="11" /><img title="下一页" src="/img/icon/noUpDM_2.gif"style="vertical-align:center;" width="11" height="11" />&nbsp;<img title="最后一页" src="/img/icon/noUpDM2.gif"style="vertical-align:center;" width="11" height="11" />&nbsp;&nbsp;每页显示的记录数&nbsp;<select name="pageSize" onchange="pageSizeChange()"><option value="10" >10项</option><option value="20" >20项</option><option value="30" >30项</option><option value="40" >40项</option><option value="50" >50项</option><option value="100" >100项</option><option value="200" selected='selected'>200项</option><option value="300" >300项</option></select><input   name="page"   type="hidden"   id="page" value="1">&nbsp;<input   name="currentPage"   type="hidden"   id="currentPage" value="1">&nbsp;<input   name="pageNo"   type="text"   id="pageNo"   size="3"   onKeyPress="return   handleEnterOnPageNo();">&nbsp;<img src="/img/icon/go.gif"  name="goto"  id="goto" style="cursor:hand;" title="跳转到" onClick="forward();"><script   type   =   'text/javaScript'>
+function   forward(){     if(!(/^([1-9])(\d{0,})(\d{0,})$/.test(document.all.pageNo.value))){         alert("请输入合法的页号！");         document.all.pageNo.focus();         return false;     }     if(document.all.pageNo.value>0     ){     alert("输入的页数超过了总页数，请重新输入！");         document.all.pageNo.focus();         return false;     }         window.location.href="/jxpgXsAction.do?totalrows=0&page="+   document.all.pageNo.value +"&pageSize="+document.all.pageSize.value;}function   handleEnterOnPageNo(){     if(event.keyCode   ==   13)     {         forward();         return   false;     }     return   true;}function pageSizeChange(){ window.location.href="/jxpgXsAction.do?totalrows=0&pageSize="+document.all.pageSize.value;}function pagination(value){ window.location.href="/jxpgXsAction.do?totalrows=0&page="+value+"&pageSize="+document.all.pageSize.value;}</script></td></tr></table>
+		</div>
+		</form>
+	</body>
+</html>
+<Script language="JavaScript">
+function unload(){
+	ajaxtool.getOper("listWj");
+}
+</Script>
+<Script language="JavaScript">
+	function check(a){
+            var start=0;
+                var end;
+                var data =a.name;
+                end =data.indexOf("#@",start);
+                var sub = data.substring(start,end);
+                window.document.WjList.wjbm.value=sub;
+
+                start = end + 2;
+                end = data.indexOf("#@",start);
+                sub = data.substring(start,end);
+                window.document.WjList.bpr.value=sub;
+
+                start = end + 2;
+                end = data.indexOf("#@",start);
+                sub = data.substring(start,end);
+                window.document.WjList.bprm.value=sub;
+				//alert("window.document.WjList.bprm.value"+sub);
+                start = end + 2;
+                end = data.indexOf("#@",start);
+                sub = data.substring(start,end);
+                window.document.WjList.wjmc.value=sub;
+				//alert("window.document.WjList.wjmc.value"+sub);
+                start = end + 2;
+                end = data.indexOf("#@",start);
+                sub = data.substring(start,end);
+                window.document.WjList.pgnrm.value=sub;
+				//alert("window.document.WjList.pgnrm.value"+sub);
+                start = end + 2;
+                sub = data.substring(start);
+                window.document.WjList.pgnr.value=sub;
+                window.document.WjList.oper.value="wjResultShow";
+
+            window.document.WjList.submit();
+        }
+       function evaluation(a){
+           	//alert(a.name);
+                var start=0;
+                var end;
+                var data =a.name;
+                end =data.indexOf("#@",start);
+                var sub = data.substring(start,end);
+                window.document.WjList.wjbm.value=sub;
+
+                start = end + 2;
+                end = data.indexOf("#@",start);
+                sub = data.substring(start,end);
+                window.document.WjList.bpr.value=sub;
+				//alert(sub);
+                start = end + 2;
+                end = data.indexOf("#@",start);
+                sub = data.substring(start,end);
+                window.document.WjList.bprm.value=sub;
+
+                start = end + 2;
+                end = data.indexOf("#@",start);
+                sub = data.substring(start,end);
+                window.document.WjList.wjmc.value=sub;
+
+                start = end + 2;
+                end = data.indexOf("#@",start);
+                sub = data.substring(start,end);
+                window.document.WjList.pgnrm.value=sub;
+
+                start = end + 2;
+                sub = data.substring(start);
+                window.document.WjList.pgnr.value=sub;
+                window.document.WjList.oper.value="wjShow";
+                window.document.WjList.submit();
+       }
+</Script>
