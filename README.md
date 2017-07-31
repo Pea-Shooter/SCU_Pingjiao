@@ -5,6 +5,8 @@
 ## Download Realease
 > how to run：[Method 2](#run)
 
+[ScuPingjiao](https://pan.baidu.com/s/1pKD6nRP)
+
 link
 
 ## Apps
