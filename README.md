@@ -1,4 +1,4 @@
-# WAF
+# 四川大学评教工具
 > All of this project is based on **Django1.9.5+** and **Python3.5.1+**, and the completion of HFF is Web App for Fun
 > So, if you like it, welcome to star it, HAHA~
 
