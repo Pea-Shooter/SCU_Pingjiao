@@ -7,8 +7,6 @@
 
 [ScuPingjiao](https://pan.baidu.com/s/1pKD6nRP)
 
-link
-
 ## Apps
 > List all apps at here
 
