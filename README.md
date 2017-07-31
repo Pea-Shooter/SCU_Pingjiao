@@ -3,7 +3,7 @@
 > So, if you like it, welcome to star it
 
 ## Download Realease
-> how to run：[Method 2](#run)
+> how to run：[Method 2nd](#method 2nd)
 
 [ScuPingjiao](https://pan.baidu.com/s/1pKD6nRP)
 
@@ -12,13 +12,13 @@
 
 1. **pingjiao**: *this app is used to make comments for our teachers convenient*
 
-**Note**
+## Note
 
 Website has been closed for no money!!! if you wanna know how to implement it, you can read `SCU_Pingjiao/HFF/pingjiao/pj_tools`.
 
-**How to execute?**
+## How to execute?
 
-*Method 1st*:
+### Method 1st:
 
 > If your computer has a `Python3` environment, and `httplib2`, `bs4` all has been installed in your environment, you can use this method
 
@@ -30,9 +30,9 @@ example:
 
 ```shell
 python3 action.py 2014141462345 123456
-````
+```
 
-<span id="run">*Method 2nd*</span>:
+### Method 2nd
 
 > If your computer has not a `Python3` environment, you can run `ScuPingjiao` (locates at `SCU_Pingjiao/ScuPingjiao` ) in your command line like this:
 
@@ -46,7 +46,7 @@ example:
 ./ScuPingjiao 2014141462345 123456
 ```
 
-**What will you see like**
+## What will you see like
 
 ```bash
 余方姝, 研究生助教评价, 编译原理 评教完成！
